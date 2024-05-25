@@ -1,4 +1,5 @@
-<!-- Nickolaus Grant --> <!-- Comment indicating the author's name -->
+<!-- Nickolaus Grant -->
+<!-- Modified on 2024-05-25 -->
 
 <!DOCTYPE html> <!-- Declares the document type and version of HTML -->
 
@@ -8,85 +9,52 @@
     <meta charset="UTF-8"> <!-- Defines the character encoding for the document -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Sets the compatibility mode for Internet Explorer -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Defines the viewport for responsive design -->
-    <title>Assignment 1.2: Foundation</title> <!-- Sets the title of the document -->
-
-    <!-- CSS Styles -->
-    <style>
-        /* CSS for styling */
-        .indented-bold {
-            text-indent: 20px; /* Adds an indentation to the text */
-            font-weight: bold; /* Makes the text bold */
-        }
-
-        .title-container {
-            text-align: center; /* Centers the text */
-        }
-
-        body {
-            background: linear-gradient(to bottom right, White, black); /* Creates a linear gradient background */
-            font-size: 24px; /* Sets the font size for the entire document */
-            padding: 20px; /* Adds padding to the body */
-        }
-
-        .box {
-            border: 2px solid white; /* Sets a white border around the box */
-            padding: 10px; /* Adds padding inside the box */
-            display: inline-block; /* Creates a box */
-            background-color: white; /* Sets the background color of the box */
-        }
-    </style>
+    <title>Assignment 2.1: Naviagting between pages</title> <!-- Sets the title of the document -->
+    <link rel="stylesheet" href="Main.css"> <!-- Linking the Main.css -->
 </head>
 
 <body>
-    <!-- HTML Content -->
-
-    <!-- Title Container -->
-    <div class="title-container">
+    <!-- Header Section -->
+    <header>
         <h1>Boards Time</h1> <!-- Heading 1 -->
-    </div>
+    </header>
 
-    <!-- Box 1 -->
-    <div class="box">
-        <h3> <!-- Heading 3 -->
-            For this assignment, we are to create two HTML files and follow instructions.
-            In the first HTML file, we are to call it index.html and add a meme.
-            In the second HTML file, we are to call it boards.html and add a copy of the program objectives.
+    <!-- Navigation Section -->
+    <nav>
+        <h2>Navigation</h2>
+        <a href="./index.html">Home</a><br>
+        <a href="./boards.html">Boards</a><br>
+    </nav>
+
+    <!-- Main Content Section -->
+    <div>
+        <h3>
+            For this assignment we have our two previous files called index.html and boards.html
+            files and we are to follow new instructions. Based on the instructions we are to add
+            a header, footer, and nav tags in index and boards files. We are also these some lines
+            information like linking the pages together, add my name in the footer, and some information
+            about UAT also in the footer. 
         </h3>
     </div>
-
-    <!-- Box 2 -->
-    <div class="box">
-        <h4> <!-- Heading 4 -->
-            This is the second HTML file so below I will copy and paste the
-            Network Security Degree Objectives.
-        </h4>
-    </div>
-
-    <!-- Box 3 -->
-    <div class="box">
-        <p class="indented-bold">NETWORK SECURITY DEGREE OBJECTIVES </p> <!-- Paragraph with class -->
+    <div>
+        <p>NETWORK SECURITY DEGREE OBJECTIVES </p>
         <p>
             <!-- Unordered List of Degree Objectives -->
             <ol>
                 <li>Create a network infrastructure design communications document that includes identified hardware components,
                     connections to the outside world, identified physical layer connectivity (media) and addressing, including operational and
                     security components in the design.</li>
-
                 <li>Install, configure and test security hardware and software tools with supporting documentation such as port scanners,
                     vulnerability detection systems, intrusion detection systems, firewalls, system hardening, anti-virus tools, patch
                     management, auditing and assessment.</li>
-
                 <li>Construct, implement and document a script or a program to automate a security-related process or other tasks such as
                     installation, administration, management, mapping resources, logon scripts, patch management, updates, auditing,
                     analysis and assessment.</li>
-
                 <li>Create a policy or procedure that addresses events such as: a disaster recovery plan, a business continuity plan, an
                     incident response policy, an acceptable usage document, an information security policy, a physical security policy,
                     assessments or troubleshooting procedures.</li>
-
                 <li>Develop a research report or implementation plan concerning legal and ethical best practices and mandated requirements
                     that pertain to information security.</li>
-
                 <li>Research, document, test and evaluate several current industry information security-based threats, risks, malicious
                     activities, covert methodology, encryption technologies, mitigation techniques or unconventional tactics to prevent loss of
                     sensitive information and data confidentiality, integrity and availability.</li>
@@ -94,5 +62,14 @@
         </p>
     </div>
 
+    <!-- Footer Section -->
+    <footer>
+        Nickolaus Grant<br>
+        University of Advancing Technology<br>
+        2625 W Baseline Rd<br>
+        Tempe, AZ 85283-1056<br>
+        <!-- Add anything else helpful or interesting -->
+        <a href="https://www.uat.edu"> Here is a link to the UAT website</a> <br>
+    </footer>
 </body>
 </html>
