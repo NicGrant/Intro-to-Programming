@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blackjack - Game File</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #864800;
+            color: #ecf0f1;
+            height: 100vh;
+            justify-content: center;
+        }
+        #game {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        #player-hand, #dealer-hand {
+            margin: 10px;
+            display: flex;
+        }
+        .hand {
+            display: flex;
+        }
+        .card {
+            width: 50px;
+            height: 75px;
+            border: 1px solid #fff;
+            border-radius: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 5px;
+            background-color: #008136;
+            color: white;
+        }
+        #controls {
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            background-color: #2980b9;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #3498db;
+        }
+    </style>
+</head>
+<body>
+    <h1>Blackjack</h1>
+    <div id="game">
+        <div class="hand-container">
+            <h2>Player's Hand</h2>
+            <div id="player-hand"></div>
+        </div>
+        <div class="hand-container">
+            <h2>Dealer's Hand</h2>
+            <div id="dealer-hand"></div>
+        </div>
+        <div id="controls">
+            <button id="hit-button">Hit</button>
+            <button id="stand-button">Stand</button>
+            <button id="restart-button">Restart</button>
+        </div>
+        <p id="message"></p>
+    </div>
+    <script src="code.js"></script>
+    <nav>
+        <h2>Navigation</h2>
+        <a href="./index.html">Home</a><br>
+        <a href="./boards.html">Boards</a><br>
+        <a href="./game.html"> Game</a> <br>
+    </nav>
+</body>
+</html>

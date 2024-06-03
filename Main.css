@@ -1,0 +1,25 @@
+body {
+    background-color: gray; /*Setting the background colors*/
+    color:rgb(28, 75, 21); /*Set the text color you like */
+}
+
+nav{
+    height: 6000px;
+    width: 200px;
+    float: left;
+    padding: 5px;
+    line-height: 30px;
+}
+
+footer{
+    text-align: center;
+    margin-right: 200px;
+}
+
+#memeImage {
+    margin-right: 200px;
+}
+
+header{
+    text-align: center;
+}
