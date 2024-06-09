@@ -1,19 +1,70 @@
+<!-- Nickolaus Grant -->
+<!-- Modified on 2024-06-09 -->
+
 <!DOCTYPE html> <!-- Declaration of the HTML document type -->
 <html lang="en"> <!-- Beginning of the HTML document with language set to English -->
+
 <head>
     <meta charset="UTF-8"> <!-- Declares the character encoding of the document -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Sets the compatibility mode for Internet Explorer -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Defines the viewport for responsive design -->
-    <title>Assignment 1.2: Foundation</title> <!-- Sets the title of the document -->
+    <title>Assignment 4.1: Using CSS Personal Webpages</title> <!-- Sets the title of the document -->
+    <link rel="stylesheet" href="Main.css"> <!-- Linking the Main.css -->
 </head>
+
 <body>
-    <h1> Meme Time</h1> <!-- Heading 1 displaying "Meme Time" -->
-    <h3> For this assingment we are to create two HTML file and follow instructions.
-        In the fist HTML file we are to called it index.html and add a meme.
-        In the second HTML file we are to called it boards.html and add a copy of the program objectives.
-    </h3> <!-- Heading 3 containing assignment instructions -->
-    <p>
-        <img id="meme" src="meme.jpg"> <!-- Image element with ID "meme" and source pointing to "meme.jpg" -->
-    </p>
+    <!-- Header Section -->
+    <header>
+        <h1>Index file</h1> <!-- Heading 1 displaying "Index file" -->
+    </header>
+
+    <!-- Navigation Section -->
+    <nav>
+        <h2>Navigation</h2>
+        <a href="./index.html">Home</a><br>
+        <a href="./boards.html">Boards</a><br>
+    </nav>
+
+    <!-- Main Content Section -->
+    <div>
+        <h3>For this assignment we are to edit the Main.css file to spefic style of the following elements:selector{
+            property: value;
+
+            }
+            
+            For the body properties
+            background-color - set a background color you like
+            color - set the text color you like
+            For the nav properties
+            height - set to 6000px
+            width - set to 200px
+            float - set to left
+            padding - set to 5px
+            line-height - set to 30px
+            For the footer properties
+            text-align - set to center
+            margin-right - set to 200px
+            For the #memeImage properties
+            margin-right - set to 200px
+            For the header properties
+            text-align - set to center
+            Link the main.css page to the index.html and boards.html pages between the opening and closing head tags in the index.html and boards pages, like so:
+            rel="stylesheet" href="main.css"
+        </h3> <!-- Heading 3 containing assignment instructions -->
+    </div>
+    
+    <div class="Memeimage">
+        <img id="meme" src="meme.jpg" class="imagemove"> <!-- Image element with ID "meme" and source pointing to "meme.jpg" -->
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        Nickolaus Grant<br>
+        University of Advancing Technology<br>
+        2625 W Baseline Rd<br>
+        Tempe, AZ 85283-1056<br>
+        <!-- Add anything else helpful or interesting -->
+        <a href="https://www.uat.edu"> Here is a link to the UAT website</a> <br>
+    </footer>
 </body>
 </html>
