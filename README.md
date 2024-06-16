@@ -1,2 +1,2 @@
 # Intro-to-Programming
-This is an repo to follow class assingments for Intro to Programming. Within this repo I will be adding the files that are nesscary for the assingments. 
+The code in code.js is broken it makes it so if the players hits and has a higher number the dealer but doesn't past 21, the dealer wins. This is the logical error I added. If you want to check the the other submission it works fine there.
