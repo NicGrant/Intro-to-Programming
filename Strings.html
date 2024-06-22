@@ -1,0 +1,141 @@
+<!-- Author: Nickolaus Grant-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Information</title>
+    <style>
+        /* Setting a background color and font for the page */
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(to right, black, orange);
+        }
+        /* Styling the container */
+        .box {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 500px;
+            text-align: center;
+        }
+        /* Styling input boxes */
+        input[type="text"] {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        /* Styling the submit button */
+        input[type="button"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        input[type="button"]:hover {
+            background-color: #45a049;
+        }
+        /* Styling the warning message */
+        .warning {
+            color: red;
+            margin-top: 10px;
+        }
+        /* Styling the secret message */
+        .secret-message {
+            display: none;
+            color: green;
+            margin-top: 20px;
+        }
+        .box2 {
+            background-color: white;
+            border-radius: 20px;
+            padding: 20px;
+            width: 500px;
+            border: 1px solid #ccc;
+            text-align: center;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="box2">
+        <h2>
+            The box below is a form that requires your first name and last name with a zip code in order to gain access to the website. 
+            For this assignment, you will not be able to see the secret message until you have entered your first and last name and zip code.
+        </h2>
+    </div>
+    <br>
+    <!-- Container for the form -->
+    <div class="box">
+        <h2>User Information Form</h2>
+        <!-- Text box input for the first name -->
+        <input type="text" id="firstName" placeholder="First Name">
+        <!-- Text box input for the last name -->
+        <input type="text" id="lastName" placeholder="Last Name">
+        <!-- Text box input for the zip code -->
+        <input type="text" id="zipCode" placeholder="Zip Code">
+        <!-- Button to trigger validation and display the secret message -->
+        <input type="button" value="Submit" onclick="validateAndShowMessage()">
+        <!-- Area to display warning messages -->
+        <div class="warning" id="warningMessage"></div>
+        <!-- Area to display the secret message -->
+        <div class="secret-message" id="secretMessage">Here is the secret message</div>
+    </div>
+
+    <script>
+        // Function to validate inputs and show the secret message
+        function validateAndShowMessage() {
+            // Get input values
+            const firstName = document.getElementById('firstName').value.trim();
+            const lastName = document.getElementById('lastName').value.trim();
+            const zipCode = document.getElementById('zipCode').value.trim();
+
+            // Combine first name and last name
+            const fullName = firstName + " " + lastName;
+
+            // Check if fullName is empty and Zipcode is empty
+            if(!firstName && !lastName && !zipCode){
+                document.getElementById("warningMessage").innertext = "Please input a name and zip code!";
+                document.getElementById("secretMessage").style.display = "none";
+                return;
+            }
+            // Check if fullName has more than 20 characters
+            if (fullName.length > 20) {
+                document.getElementById('warningMessage').innerText = "Name must not exceed 20 characters!";
+                document.getElementById('secretMessage').style.display = "none";
+                return;
+            }
+
+            // Check if zip code is valid (5 digits)
+            const zipCodePattern = /^\d{5}$/;
+            if (!zipCodePattern.test(zipCode)) {
+                document.getElementById('warningMessage').innerText = "Zip code must be exactly 5 digits!";
+                document.getElementById('secretMessage').style.display = "none";
+                return;
+            }
+            //Check if full name is less than 3 characters
+            if(fullName.length < 3){
+                docuemnt.getElementById('warningMessage').innerText = "Name must be at least 3 characters!";
+                document.getElementById('secretMessage').style.display = "none";
+                return;
+            }
+            // If all inputs are valid, display the secret message
+            document.getElementById('warningMessage').innerText = "";
+            document.getElementById('secretMessage').style.display = "block";
+
+        }
+    </script>
+</body>
+</html>
