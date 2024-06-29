@@ -1,19 +1,99 @@
-<!DOCTYPE html> <!-- Declaration of the HTML document type -->
-<html lang="en"> <!-- Beginning of the HTML document with language set to English -->
+<!-- Nickolaus Grant -->
+<!-- Date edited: 06/29/2024 -->
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8"> <!-- Declares the character encoding of the document -->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Sets the compatibility mode for Internet Explorer -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Defines the viewport for responsive design -->
-    <title>Assignment 1.2: Foundation</title> <!-- Sets the title of the document -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bullet Point List Example</title>
+    <link rel="stylesheet" href="Main.css">
 </head>
 <body>
-    <h1> Meme Time</h1> <!-- Heading 1 displaying "Meme Time" -->
-    <h3> For this assingment we are to create two HTML file and follow instructions.
-        In the fist HTML file we are to called it index.html and add a meme.
-        In the second HTML file we are to called it boards.html and add a copy of the program objectives.
-    </h3> <!-- Heading 3 containing assignment instructions -->
-    <p>
-        <img id="meme" src="meme.jpg"> <!-- Image element with ID "meme" and source pointing to "meme.jpg" -->
-    </p>
+    <!-- Header Section -->
+    <header>
+        <h1>Index file</h1>
+    </header>
+
+    <!-- Navigation Section -->
+    <nav>
+        <h2>Navigation</h2>
+        <a href="./index.html">Home</a><br>
+        <a href="./boards.html">Boards</a><br>
+    </nav>
+
+    <!-- Main Content Section -->
+    <div class="main-content">
+        <h3>For this assignment we are to edit the index.html file to specific style of the following elements:</h3>
+        <ul>
+            <li>Write HTML code to create the Start button.</li>
+            <li>Write HTML code to create the Stop button.</li>
+            <li>Create a JavaScript function to enable/disable the Start button.</li>
+            <li>This function should call another function that moves the meme image around the page.</li>
+            <li>Create a JavaScript function to enable/disable the Stop button.</li>
+            <li>This function should call another function that stops moving the meme image.</li>
+            <li>Wire the Start button using the onClick to JavaScript Functions to disable the start button and Enable the opposite button clicked.</li>
+            <li>Wire the Stop button using the onClick to JavaScript Functions to disable the stop button and Enable the opposite button clicked.</li>
+            <li>Test the buttons.</li>
+            <li>Have at least 1 creative element – images, fonts, background color, etc. </li>
+            <li>Create a nice look and feel for the user and make a great user experience!</li>
+            <li>Comment above almost every line of your code, both HTML and JavaScript!</li>
+            <li>Put a comment at the top of your HTML file with your name in it.</li>
+            <li>ATake one or more screen prints of your application running.</li>
+        </ul>
+    </div>
+
+    <!-- Buttons Section -->
+    <div class="buttons">
+        <button id="startbutton" onclick="startmoving()">Start</button>
+        <button id="stopbutton" onclick="stopmoving()">Stop</button>
+    </div>
+
+    <!-- Meme Image Section -->
+    <div class="meme-image">
+        <img id="meme" src="meme.jpg" class="image-move">
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        Nickolaus Grant<br>
+        University of Advancing Technology<br>
+        2625 W Baseline Rd<br>
+        Tempe, AZ 85283-1056<br>
+        <a href="https://www.uat.edu">Here is a link to the UAT website</a><br>
+    </footer>
+
+    <!-- JavaScript Section - JavaScript code to move the meme image around the page -->
+    <script>
+        // Function to code the start and stop buttons
+        function startmoving(){
+            document.getElementById("startbutton").disabled = true;
+            document.getElementById("stopbutton").disabled = false;
+            // Function to move the image
+            moveImage();
+        }
+        // Function to stop the image
+        function stopmoving(){
+            document.getElementById("stopbutton").disabled = true;
+            document.getElementById("startbutton").disabled = false;
+            
+            clearInterval(movingInterval);
+        }
+        // Getting the image to move around the page
+        let movingInterval;
+        function moveImage(){
+            const meme = document.getElementById("meme");
+            let position = 0;
+            const step = 5;
+
+            movingInterval = setInterval(() => {
+                position += step;
+                meme.style.transform = `translateX(${position}px)`;
+                if (position > window.innerWidth - meme.width) {
+                    position = 0;
+                }
+            }, 100);
+        }
+    </script>
 </body>
 </html>
