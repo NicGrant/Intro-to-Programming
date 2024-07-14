@@ -1,0 +1,91 @@
+<!-- Nickolaus Grant -->
+<!-- Date edited: 07/14/2024 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assingment 9.1 - Palindrome Checker</title>
+    <link rel="stylesheet" href="StringsC.Css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1>String file</h1>
+    </header>
+
+    <!-- Navigation Section -->
+    <nav>
+        <h2>Navigation</h2>
+        <a href="./index.html">Home</a><br>
+        <a href="./boards.html">Boards</a><br>
+    </nav>
+
+    <!-- Main Content Section -->
+    <div class="main-content">
+        <h3>For this assignment we are to create new file called Strings.html and follow these requirements for the assingnment:</h3>
+        <ul>
+            <li>Create a new page called strings.html.</li>
+            <li>Create a loop and add a prompt for the user to enter a string.</li>
+            <li>After you notify the user if the string was a palindrome or not, give the user the option of entering another word.</li>
+            <li>If the user is done entering words, exit out of the loop.</li>
+            <li>Check if the string is spelled the same forwards and backward (hint, remove the spaces before checking).</li>
+            <li>Have at least 2 creative elements – images, fonts, background color, etc.</li>
+            <li>Create a nice look and feel for the user and make a great user experience!</li>
+            <li>Comment above almost every line of your code, both HTML and JavaScript!</li>
+            <li>Put a comment at the top of your HTML file with your name in it.</li>
+            <li>Take one or more screen prints of your application running. </li>
+        </ul>
+    </div>
+
+    <!-- Main container for the content -->
+    <div class="container">
+        <!-- Heading of the application -->
+        <h1>Palindrome Checker</h1>
+        <!-- Input form for entering the string -->
+        <input type="text" id="userInput" placeholder="Enter a string">
+        <!-- Buttons for submitting and exiting -->
+        <div>
+            <button onclick="checkPalindrome()">Check</button>
+            <button onclick="exitLoop()">Exit</button>
+        </div>
+        <!-- Area for displaying the result -->
+        <div class="result" id="result"></div>
+    </div>
+
+    <!-- JavaScript for functionality -->
+    <script>
+        // Function to check if the string is a palindrome
+        function checkPalindrome() {
+            // Get the user input value
+            const input = document.getElementById('userInput').value;
+            // Remove spaces and convert to lowercase
+            const cleanedInput = input.replace(/\s+/g, '').toLowerCase();
+            // Reverse the cleaned input
+            const reversedInput = cleanedInput.split('').reverse().join('');
+            // Check if the cleaned input is equal to the reversed input
+            if (cleanedInput === reversedInput) {
+                document.getElementById('result').textContent = `"${input}" is a palindrome!`;
+            } else {
+                document.getElementById('result').textContent = `"${input}" is not a palindrome.`;
+            }
+        }
+
+        // Function to exit the loop and clear the input
+        function exitLoop() {
+            document.getElementById('userInput').value = '';
+            document.getElementById('result').textContent = 'Thank you for using the Palindrome Checker!';
+        }
+    </script>
+    
+       <!-- Footer Section -->
+    <footer>
+        Nickolaus Grant<br>
+        University of Advancing Technology<br>
+        2625 W Baseline Rd<br>
+        Tempe, AZ 85283-1056<br>
+        <a href="https://www.uat.edu">Here is a link to the UAT website</a><br>
+    </footer>
+    </body>
+</html>
