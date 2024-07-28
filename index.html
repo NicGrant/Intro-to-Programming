@@ -1,0 +1,107 @@
+<!-- Nickolaus Grant -->
+<!-- Date edited: 07/27/2024 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Incorporate Sound</title>
+    <link rel="stylesheet" href="Main.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1>Assignment 11.1: Incorpate Sound</h1>
+    </header>
+
+    <!-- Navigation Section -->
+    <nav>
+        <h2>Navigation</h2>
+        <a href="./index.html">Home</a><br>
+        <a href="./boards.html">Boards</a><br>
+    </nav>
+
+    <!-- Main Content Section -->
+    <div class="main-content">
+        <h3>For this assignment we are to edit the index.html file to specific style of the following elements:</h3>
+        <ul>
+            <li>Implement background sound in one of your html pages using HTML or JavaScript.</li>
+            <li>Have at least 3 creative elements – images, fonts, background color, etc. </li>
+            <li>Create unique a nice look and feel for the user and make a great user experience beyond what you see above!</li>
+            <li>Comment above almost every line of your code, both HTML and JavaScript!</li>
+            <li>Put a comment at the top of your HTML file with your name in it.</li>
+            <li>Take one or more screen prints of your application running.</li>
+        </ul>
+    </div>
+   
+    <!-- Buttons Section -->
+    <div class="buttons">
+        <h3>
+            Image Mover
+        </h3>
+        <button id="startbutton" onclick="startmoving()">Start</button>
+        <button id="stopbutton" onclick="stopmoving()">Stop</button>
+    </div>
+
+    <!-- Meme Image Section -->
+    <div class="meme-image">
+        <img id="meme" src="meme.jpg" class="image-move">
+    </div>
+
+    <!-- Background Music Section -->
+    <div class="main-content">
+        <h3>Rain Forest Music to listen to</h3>
+        <!-- Audio element with autoplay and loop attributes -->
+        <audio controls>
+            <!-- Source of the audio file -->
+            <source src="rainforest.mp3" type="audio/mpeg">
+            <!-- Fallback text for browsers that do not support the audio element -->
+            Your browser does not support the audio element.
+        </audio>        
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        Nickolaus Grant<br>
+        University of Advancing Technology<br>
+        2625 W Baseline Rd<br>
+        Tempe, AZ 85283-1056<br>
+        <a href="https://www.uat.edu">Here is a link to the UAT website</a><br>
+    </footer>
+
+    <!-- JavaScript Section - JavaScript code to move the meme image around the page -->
+    <script>
+        // Function to code the start and stop buttons
+        function startmoving(){
+            document.getElementById("startbutton").disabled = true;
+            document.getElementById("stopbutton").disabled = false;
+            // Function to move the image
+            moveImage();
+        }
+
+        // Function to stop the image
+        function stopmoving(){
+            document.getElementById("stopbutton").disabled = true;
+            document.getElementById("startbutton").disabled = false;
+            clearInterval(movingInterval);
+        }
+
+        // Getting the image to move around the page
+        let movingInterval;
+        function moveImage(){
+            const meme = document.getElementById("meme");
+            let position = 0;
+            const step = 5;
+
+            movingInterval = setInterval(() => {
+                position += step;
+                meme.style.transform = `translateX(${position}px)`;
+                if (position > window.innerWidth - meme.width) {
+                    position = 0;
+                }
+            }, 100);
+        }
+    </script>
+</body>
+</html>
