@@ -1,19 +1,180 @@
-<!DOCTYPE html> <!-- Declaration of the HTML document type -->
-<html lang="en"> <!-- Beginning of the HTML document with language set to English -->
+<!-- Nickolaus Grant -->
+<!-- Date edited: 08/04/2024 -->
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8"> <!-- Declares the character encoding of the document -->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Sets the compatibility mode for Internet Explorer -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Defines the viewport for responsive design -->
-    <title>Assignment 1.2: Foundation</title> <!-- Sets the title of the document -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bringing It All Together</title>
+    <link rel="stylesheet" href="Main.css">
+    <style>
+
+    </style>
 </head>
 <body>
-    <h1> Meme Time</h1> <!-- Heading 1 displaying "Meme Time" -->
-    <h3> For this assingment we are to create two HTML file and follow instructions.
-        In the fist HTML file we are to called it index.html and add a meme.
-        In the second HTML file we are to called it boards.html and add a copy of the program objectives.
-    </h3> <!-- Heading 3 containing assignment instructions -->
-    <p>
-        <img id="meme" src="meme.jpg"> <!-- Image element with ID "meme" and source pointing to "meme.jpg" -->
-    </p>
+    <!-- Header Section -->
+    <header>
+        <h1>Assignment 12.1 :Bringing It All Together</h1>
+    </header>
+
+    <!-- Navigation Section -->
+    <nav>
+        <h2>Navigation</h2>
+        <a href="./index.html">Home</a>
+        <a href="./boards.html">Boards</a>
+    </nav>
+
+    <!-- Main Content Section -->
+    <div class="main-content">
+        <h3>For this assignment, we are to edit the index.html file to a specific style for the following elements:</h3>
+        <ul>
+            <li>You should have at least 3 items from this list - decision logic (if/else),
+                 loops, string manipulation and validation, functions, classes, and objects</li>
+            <li>Have at least 1 creative element – images, fonts, background color, etc.</li>
+            <li>Create a unique, nice look and feel for the user and make a great user experience beyond what you see above!</li>
+            <li>Comment above almost every line of your code, both HTML and JavaScript!</li>
+            <li>Put a comment at the top of your HTML file with your name in it.</li>
+            <li>Take one or more screen prints of your application running.</li>
+        </ul>
+    </div>
+   
+    <!-- Buttons Section -->
+    <div class="buttons">
+        <h3>Image Mover</h3>
+        <!-- Button to start moving the image -->
+        <button id="startbutton" onclick="startMoving()">Start</button>
+        <!-- Button to stop moving the image -->
+        <button id="stopbutton" onclick="stopMoving()" disabled>Stop</button>
+    </div>
+
+    <!-- Meme Image Section -->
+    <div class="meme-image">
+        <!-- Image that will be moved around the page -->
+        <img id="meme" src="meme.jpg" class="image-move" alt="Meme Image">
+    </div>
+
+    <!-- Background Music Section -->
+    <div class="main-content">
+        <h3>Rain Forest Music to listen to</h3>
+        <!-- Audio element with autoplay and loop attributes -->
+        <audio controls autoplay loop>
+            <!-- Source of the audio file -->
+            <source src="rainforest.mp3" type="audio/mpeg">
+            <!-- Fallback text for browsers that do not support the audio element -->
+            Your browser does not support the audio element.
+        </audio>        
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        Nickolaus Grant<br>
+        University of Advancing Technology<br>
+        2625 W Baseline Rd<br>
+        Tempe, AZ 85283-1056<br>
+        <a href="https://www.uat.edu">Here is a link to the UAT website</a><br>
+    </footer>
+
+    <!-- JavaScript Section -->
+    <script>
+        // Global variable to hold the interval for moving the image
+        let movingInterval;
+
+        // Function to start moving the image
+        function startMoving() {
+            // Disable the start button
+            document.getElementById("startbutton").disabled = true;
+            // Enable the stop button
+            document.getElementById("stopbutton").disabled = false;
+            // Call the moveImage function to begin movement
+            moveImage();
+        }
+
+        // Function to stop moving the image
+        function stopMoving() {
+            // Enable the start button
+            document.getElementById("startbutton").disabled = false;
+            // Disable the stop button
+            document.getElementById("stopbutton").disabled = true;
+            // Clear the interval to stop the image movement
+            clearInterval(movingInterval);
+        }
+
+        // Function to move the image across sthe screen
+        function moveImage() {
+            const meme = document.getElementById("meme");
+            // Set the initial position and step size
+            let position = 0;
+            const step = 5;
+
+            // Set the interval to move the image every 100 milliseconds
+            movingInterval = setInterval(() => {
+                position += step;
+                meme.style.transform = `translateX(${position}px)`;
+                if (position > window.innerWidth - meme.width) {
+                    position = 0;
+                }
+            }, 100);
+        }
+
+        // String manipulation example: validating and formatting a string
+        function validateAndFormatString(input) {
+            // Trim whitespace from both ends of the input string
+            let trimmedInput = input.trim();
+            // Check if the trimmed input is empty
+            if (trimmedInput === "") {
+                // Log a message if the input is empty
+                console.log("Input is empty");
+                return;
+            }
+            // Capitalize the first letter and convert the rest to lowercase
+            let formattedString = trimmedInput.charAt(0).toUpperCase() + trimmedInput.slice(1).toLowerCase();
+            // Log the formatted string
+            console.log("Formatted String: ", formattedString);
+        }
+
+        // Call the string manipulation function with a sample input
+        validateAndFormatString(" hello WORLD ");
+
+        // Example class and object
+        class Animal {
+            constructor(name, sound) {
+                this.name = name;
+                this.sound = sound;
+            }
+
+            makeSound() {
+                console.log(`${this.name} says ${this.sound}`);
+            }
+        }
+
+        // Create Animal class
+        const dog = new Animal("Dog", "Bark");
+        const cat = new Animal("Cat", "Meow");
+
+        // Call the makeSound method for both objects
+        dog.makeSound();
+        cat.makeSound();
+
+        const animals = [dog, cat];
+        for (let animal of animals) {
+            animal.makeSound();
+        }
+
+        // Example of decision logic (if/else)
+        function checkAnimalSound(animal) {
+            if (animal.sound === "Bark") {
+                console.log("This is a dog.");
+            } else if (animal.sound === "Meow") {
+                console.log("This is a cat.");
+            } else {
+                console.log("Unknown animal.");
+            }
+        }
+
+        // Check the sound of the dog and cat objects
+        checkAnimalSound(dog);
+        checkAnimalSound(cat);
+    </script>
 </body>
 </html>

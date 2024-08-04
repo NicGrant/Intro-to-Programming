@@ -1,0 +1,24 @@
+body {
+    background-color: #90a7a3; /* Light blue background color for better UX */
+    font-family: 'Courier New', Courier, monospace; /* Creative font */
+    color: #333;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+header, footer {
+    background-color: #008d07;
+    color: white;
+    padding: 10px 0;
+}
+nav a {
+    color: ##008d07;
+    text-decoration: none;
+    margin: 40px
+}
+.main-content, .buttons, .meme-image {
+    margin: 20px;
+}
+.image-move {
+    width: 200px;
+}
