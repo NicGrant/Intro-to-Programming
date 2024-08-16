@@ -1,0 +1,241 @@
+/* Styling used by every file*/
+body {
+    background-color: #90a7a3; /* Light blue background color for better UX */
+    font-family: 'Courier New', Courier, monospace; /* Creative font */
+    color: #333;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+ul {
+    list-style-position: inside; /* Align bullets with text */
+    padding-left: 0; /* Remove default padding */
+    display: flex; /* Use flexbox to align items */
+    flex-direction: column; /* Arrange items vertically */
+  }
+  
+li {
+    display: flex;
+    align-items: center; /* Center align items vertically */
+  }
+  
+nav {
+    text-align: left;
+    height: 100vh; 
+    width: 200px;
+    float: left;
+    padding: 20px;
+    line-height: 30px;
+}
+
+header, footer {
+    background-color: #008d07;
+    color: white;
+    padding: 10px 0;
+}
+
+.main-content, .buttons, .meme-image {
+    margin: 20px;
+}
+.image-move {
+    width: 200px;
+}
+/* Styling for Table.html */
+table {
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
+}
+th, td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ccc;
+}
+th {
+    background-color: #008d07;
+    color: white;
+}
+tr:hover {
+    background-color: #f5f5f5;
+}
+/* Styling for Game.html */
+#game {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#player-hand, #dealer-hand {
+    margin: 10px;
+    display: flex;
+}
+.hand {
+    display: flex;
+}
+.card {
+    width: 50px;
+    height: 75px;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+    background-color: #008136;
+    color: white;
+}
+#controls {
+    margin-top: 20px;
+}
+button {
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: #2980b9;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #3498db;
+}
+/* Styling for Palindrome.html*/
+.container {
+    background-color: white;
+    padding: 20px; /* Corrected from 200spx to 20px */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 300px; /* Set a fixed width */
+    margin: 50px auto; /* Center the container */
+}
+
+.result {
+    margin-top: 20px;
+    font-size: 1.2em;
+}
+input[type="text"] {
+    padding: 10px;
+    width: 80%;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+/* Styling for UserInput.html*/
+.box {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 500px;
+    text-align: center;
+    margin: 20px auto;
+}
+input[type="text"] {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+input[type="button"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+input[type="button"]:hover {
+    background-color: #45a049;
+}
+.warning {
+    color: red;
+    margin-top: 10px;
+}
+.secret-message {
+    display: none;
+    color: green;
+    margin-top: 20px;
+}
+/* Styling for Objectives.html */
+.box2 {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+}
+.container2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    width: 90%;
+    max-width: 1200px;
+    box-sizing: border-box;
+    
+}
+/* Styling for Home.html */
+header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 50px 0;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+header p {
+    font-size: 1.2em;
+    margin-top: 10px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.grid-item {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+}
+
+.grid-item h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.grid-item p {
+    font-size: 1em;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+
